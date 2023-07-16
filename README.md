@@ -4,7 +4,7 @@ This script reads data from a Sensus PolluCom E heat meter and publishes the res
 * socat
 ## Using Docker
 | Env           | Content       |
-| ------------- |:-------------:|
+| ------------- |-------------|
 | ESP_IP        | IP of esp-link |
 | MQTT_BROKER      | IP of MQTT broker      |
 | MQTT_PORT | port of MQTT broker      |
