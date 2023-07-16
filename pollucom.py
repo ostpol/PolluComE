@@ -11,14 +11,14 @@ import paho.mqtt.client as paho
 import os
 import subprocess
 
-#esp-link Settings
-esp_ip = '192.168.1.123'
-
-#MQTT Settings
-mqtt_broker = '192.168.1.163'
-mqtt_port = int(1883)
-mqtt_topic = 'hzg/meter'
-mqtt_client = 'PolluComE'
+#Get environment variables
+esp_ip = os.environ['ESP_IP']
+mqtt_broker = os.environ['MQTT_BROKER']
+mqtt_port = int(os.environ['MQTT_PORT'])
+mqtt_topic = os.environ['MQTT_TOPIC']
+mqtt_client = os.environ['MQTT_CLIENT']
+mqtt_user = os.environ['MQTT_USER']
+mqtt_pwd = os.environ['MQTT_PWD']
 
 #Serial Settings
 serial_port = './ttyV666'
@@ -54,7 +54,7 @@ assert isinstance(frame, meterbus.TelegramACK)
 meterbus.send_request_frame(ser, address)
 frame = meterbus.load(meterbus.recv_frame(ser, meterbus.FRAME_DATA_LENGTH))
 assert isinstance(frame, meterbus.TelegramLong)
-# print data, todo: save it to file
+# print data
 print(frame.to_JSON())
 #publish via MQTT
 msg = frame.to_JSON()
