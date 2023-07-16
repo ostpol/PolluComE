@@ -18,4 +18,5 @@ RUN crontab -l | { cat; echo "*/55    *       *       *       *       /usr/bin/p
 
 COPY pollucom.py /usr/sbin/
 
-CMD tail -f /dev/null
+#Starting crond and running in foregroud so the container keeps running and cronjob can run
+CMD crond -f
