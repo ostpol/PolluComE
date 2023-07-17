@@ -1,12 +1,25 @@
 # PolluComE
-This script reads data from a Sensus PolluCom E heat meter and publishes the results to an MQTT broker. Because I could'nt found a working solution which runs directly on an ESP, I used [esp-link](https://github.com/jeelabs/esp-link) to provide a virtual serial port that is used by this script.
+This script is designed to read data from a Sensus PolluCom E heat meter and publish the results to an MQTT broker. Since I couldn't find a direct solution that works on an ESP, I utilized [esp-link](https://github.com/jeelabs/esp-link) to establish a virtual serial port that is used by this script.
+
+The entire communication aspect is based on the work of [93schlucko](https://forum-raspberrypi.de/forum/thread/57389-sensus-pollucom-e-ueber-pymeterbus-auslesen/?postID=543096#post543096). Additionally, [this thread](https://www.mikrocontroller.net/topic/438972?page=single) (in German) serves as a valuable source of information about the topic.
+
 ## Prerequisites
+### Linux
 * socat
+### Python
+* pyserial
+* requests
+* paho-mqtt
+* pyMeterBus
+
 ## Using Docker
+
 ### Building the image
 `docker build . -t fancyimagename`
+
 ### Running the container
 `docker run --env=ESP_IP=x.x.x.x --env=MQTT_PORT=1883 --env=MQTT_BROKER=y.y.y.y --env=MQTT_CLIENT=ClientName --env=MQTT_TOPIC=your/topic --env=MQTT_USER=j --env=MQTT_PWD=j --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=PYTHONUNBUFFERED=1 --runtime=runc -d fancyimagename`
+
 ### Environment Variables
 | Env           | Content       |
 | ------------- |-------------|
