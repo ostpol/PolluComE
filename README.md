@@ -14,7 +14,7 @@ The entire MeterBus communication is based on the work of [93schlucko](https://f
 
 ## Configuration
 
-Because I focused on running this in Docker, environment variables are used for configuration. See [Environment Variables](###Environment Variables).
+Because I focused on running this in Docker, environment variables are used for configuration. See [Environment Variables](### Environment Variables).
 
 ## Using Docker
 
