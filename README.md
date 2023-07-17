@@ -1,5 +1,5 @@
 # PolluComE
-This script is designed to read data from a Sensus PolluCom E heat meter and publish the results to an MQTT broker. Since I couldn't find a solution that works entirely on an ESP, I utilized [esp-link](https://github.com/jeelabs/esp-link) to establish a virtual serial port that is this script connects to.
+This script is designed to read data from a Sensus PolluCom E heat meter and publish the results to an MQTT broker. Since I couldn't find a solution that works entirely on an ESP, I utilized [esp-link](https://github.com/jeelabs/esp-link) to establish a virtual serial port that this script connects to.
 
 The entire MeterBus communication is based on the work of [93schlucko](https://forum-raspberrypi.de/forum/thread/57389-sensus-pollucom-e-ueber-pymeterbus-auslesen/?postID=543096#post543096). Additionally, [this thread](https://www.mikrocontroller.net/topic/438972?page=single) (in German) serves as a valuable source of information about the topic.
 
