@@ -12,13 +12,27 @@ import os
 import subprocess
 
 #Get environment variables
+#mandatory
 esp_ip = os.environ['ESP_IP']
 mqtt_broker = os.environ['MQTT_BROKER']
-mqtt_port = int(os.environ['MQTT_PORT'])
 mqtt_topic = os.environ['MQTT_TOPIC']
-mqtt_client = os.environ['MQTT_CLIENT']
-mqtt_user = os.environ['MQTT_USER']
-mqtt_pwd = os.environ['MQTT_PWD']
+
+#optional
+if "MQTT_PORT" in os.environ:
+    mqtt_port = int(os.environ['MQTT_PORT'])
+else:
+    mqtt_port = int(1883)
+
+if "MQTT_CLIENT" in os.environ:
+    mqtt_client = os.environ['MQTT_CLIENT']
+else:
+    mqtt_client = 'PolluComE'
+
+if "MQTT_USER" in os.environ:
+    mqtt_user = os.environ['MQTT_USER']
+
+if "MQTT_PWD" in os.environ:
+    mqtt_pwd = os.environ['MQTT_PWD']
 
 #Serial Settings
 serial_port = './ttyV666'
