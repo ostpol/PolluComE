@@ -1,5 +1,4 @@
 FROM alpine:latest
-MAINTAINER tonylehnert.de
 
 ENV PYTHONUNBUFFERED=1
 
