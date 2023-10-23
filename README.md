@@ -19,10 +19,10 @@ Because I focused on running this in Docker, environment variables are used for 
 ## Using Docker
 
 ### Building the image
-`docker build . -t fancyimagename`
+`docker build . -t PolluComE`
 
 ### Running the container
-`docker run --env=ESP_IP=x.x.x.x --env=MQTT_PORT=1883 --env=MQTT_BROKER=y.y.y.y --env=MQTT_CLIENT=ClientName --env=MQTT_TOPIC=your/topic --env=MQTT_USER=j --env=MQTT_PWD=j --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=PYTHONUNBUFFERED=1 --runtime=runc -d fancyimagename`
+`docker run --env=ESP_IP=x.x.x.x --env=MQTT_PORT=1883 --env=MQTT_BROKER=y.y.y.y --env=MQTT_CLIENT=ClientName --env=MQTT_TOPIC=your/topic --env=MQTT_USER=j --env=MQTT_PWD=j --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --env=PYTHONUNBUFFERED=1 --runtime=runc -d PolluComE`
 
 ### Environment Variables
 | Env           | Content                          | Mandatory |
